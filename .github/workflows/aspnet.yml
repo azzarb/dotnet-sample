@@ -1,12 +1,14 @@
 name: Deploy ASP.NET MVC App deploy to Azure Web App
 
 on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - '*'
+  # push:
+  #   branches:
+  #     - master
+  # pull_request:
+  #   branches:
+  #     - '*'
+  schedule:
+  - cron: '*/5 * * * *'
 # CONFIGURATION
 #
 # For help, go to https://github.com/Azure/Actions
