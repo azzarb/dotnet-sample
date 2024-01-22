@@ -1,14 +1,14 @@
 name: Deploy ASP.NET MVC App deploy to Azure Web App
 
 on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - '*'
-  # schedule:
-  # - cron: '*/5 * * * *'
+  # push:
+  #   branches:
+  #     - master
+  # pull_request:
+  #   branches:
+  #     - '*'
+  schedule:
+  - cron: '*/5 * * * *'
 # CONFIGURATION
 #
 # For help, go to https://github.com/Azure/Actions
@@ -28,7 +28,9 @@ jobs:
     steps:
 
     # checkout the repo
-    - uses: actions/checkout@master  
+    - uses: actions/checkout@v2
+      with:
+          ref: master
     
     - name: Install Nuget
       uses: nuget/setup-nuget@v1
