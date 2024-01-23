@@ -29,10 +29,10 @@ jobs:
     steps:
 
     # checkout the repo
-    - uses: actions/checkout@v2
-      with:
-          ref: feature/1
-    
+    - uses: actions/checkout@feature/1
+      # with:
+      #     ref: feature/1
+     
     - name: Install Nuget
       uses: nuget/setup-nuget@v1
       with:
