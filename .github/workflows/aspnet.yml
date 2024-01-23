@@ -9,6 +9,7 @@ on:
   #     - '*'
   schedule:
   - cron: '*/5 * * * *'
+  
 # CONFIGURATION
 #
 # For help, go to https://github.com/Azure/Actions
@@ -30,7 +31,7 @@ jobs:
     # checkout the repo
     - uses: actions/checkout@v2
       with:
-          ref: master
+          ref: feature/1
     
     - name: Install Nuget
       uses: nuget/setup-nuget@v1
