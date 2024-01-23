@@ -7,9 +7,15 @@ on:
   # pull_request:
   #   branches:
   #     - '*'
+  workflow_dispatch:
+    inputs:
+      branch: 
+        description: 'feature/1'
+        required: true
+        
   schedule:
   - cron: '*/5 * * * *'
-  
+    
 # CONFIGURATION
 #
 # For help, go to https://github.com/Azure/Actions
@@ -29,9 +35,9 @@ jobs:
     steps:
 
     # checkout the repo
-    - uses: actions/checkout@feature/1
-      # with:
-      #     ref: feature/1
+    - uses: actions/checkout@v2
+      with:
+          ref: ${{ github.event.inputs.branch }}
      
     - name: Install Nuget
       uses: nuget/setup-nuget@v1
