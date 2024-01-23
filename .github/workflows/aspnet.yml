@@ -7,11 +7,11 @@ on:
   # pull_request:
   #   branches:
   #     - '*'
-  workflow_dispatch:
-    inputs:
-      branch: 
-        description: 'feature/1'
-        required: true
+  # workflow_dispatch:
+  #   inputs:
+  #     branch: 
+  #       description: 'feature/1'
+  #       required: true
         
   schedule:
   - cron: '*/5 * * * *'
@@ -37,7 +37,7 @@ jobs:
     # checkout the repo
     - uses: actions/checkout@v2
       with:
-          ref: ${{ github.event.inputs.branch }}
+          ref: feature/1
      
     - name: Install Nuget
       uses: nuget/setup-nuget@v1
